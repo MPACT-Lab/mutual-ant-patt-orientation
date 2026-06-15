@@ -4,7 +4,7 @@ This repository contains the MATLAB code for the paper **"Platform and Orientati
 
 ## General Introduction
 
-In practical wireless deployments, communication terminals are integrated into physical platforms such as UAVs, ground vehicles, or base station structures. These platforms intrinsically alter the wireless channel through structural shadowing, reflections, and scattering — effects not captured by traditional anechoic chamber antenna measurements. This work proposes to learn these effects directly from noisy, sparse field measurements using a least-squares (LS) framework, and incorporates the result into a modified free-space path loss (FSPL) model.
+In practical wireless deployments, communication terminals are integrated into physical platforms such as UAVs, ground vehicles, or base station structures. These platforms intrinsically alter the wireless channel through structural shadowing, reflections, and scattering; these effects not captured by traditional anechoic chamber antenna measurements. This work proposes to learn these effects directly from noisy, sparse field measurements using a least-squares (LS) framework, and incorporates the result into a modified free-space path loss (FSPL) model.
 
 <p align="center">
   <img src="png/fig1_system_model.png" width="600"/>
@@ -21,7 +21,7 @@ where the mutual antenna gain $\hat{G}_{n_1,n_2}$ is estimated from field data a
 ### Key Highlights
 
 - **Framework**: Least-squares estimation of the mutual antenna pattern from sparse, noisy RSS measurements collected in the field.
-- **Datasets**: Two publicly available AERPAW datasets — UAV-UGV links (Dataset 1 / AFAR) and tower-UAV links (Dataset 2 / multi-BW).
+- **Datasets**: Two publicly available AERPAW datasets: UAV-UGV links (Dataset 1 / AFAR) and tower-UAV links (Dataset 2 / multi-BW).
 - **Result**: The learned mutual pattern reduces path loss estimation error by up to **10 dB** compared to anechoic chamber baselines, with as few as **10 measurements per joint angular bin**.
 - **Bandwidth robustness**: Consistent performance gain across 0.125 MHz to 5 MHz bandwidth range.
 
@@ -40,7 +40,7 @@ RSS prediction performance for Dataset 1 — UAV/UGV link (Fig. 3):
 <p align="center">
   <img src="png/fig3_rss_dataset1.png" width="800"/>
   <br>
-  <em>Fig. 3: RSS prediction for test experiments A1 and A3. The proposed method better captures structural shadowing at low elevation angles and constructive interference at short distances.</em>
+  <em>Fig. 3: RSS prediction for test experiment A1. The proposed method better captures structural shadowing at low elevation angles and constructive interference at short distances.</em>
 </p>
 
 RSS prediction performance for Dataset 2 — tower/UAV link (Fig. 4):
@@ -48,7 +48,7 @@ RSS prediction performance for Dataset 2 — tower/UAV link (Fig. 4):
 <p align="center">
   <img src="png/fig4_rss_dataset2.png" width="800"/>
   <br>
-  <em>Fig. 4: RSS prediction for test experiments B1 and B2.</em>
+  <em>Fig. 4: RSS prediction for test experiment B1.</em>
 </p>
 
 ## Repository Structure
@@ -94,12 +94,12 @@ The `data_gen` scripts are shared with the [uav-spectrum-sensing-insights](https
 ```bash
 cd data_gen/AFAR_dataset
 ```
-Run `data_gener_afar_sensors.m` for Dataset 1 (AFAR).
+Run `data_gener_afar_wcl.m` for Dataset 1 (AFAR).
 
 ```bash
 cd data_gen/Multi_BW_dataset
 ```
-Run `data_gener_cole_sensors.m` for Dataset 2 (multi-BW / cole).
+Run `data_gener_cole_wcl.m` for Dataset 2 (multi-BW / cole).
 
 ### Generate Main Results
 
